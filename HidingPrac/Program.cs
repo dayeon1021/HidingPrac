@@ -9,14 +9,17 @@ namespace HidingPrac
     class Parent
     {
         public int variable = 273;
-        public void Method()
+        //virtual로 선언한 뒤에 자식에서 override를 붙여서 표시한 뒤 사용
+        public virtual void Method()
         {
             Console.WriteLine("부모의 메서드");
         }
     }
     class Child : Parent{
-        public string variable = "shadowing";
-        public void Method()
+
+        //new 키워드를 사용하면 Hiding을 하겠다는 의미이다.
+        public new string variable = "shadowing";
+        public override void Method()
         {
             Console.WriteLine("자식의 메서드");
         }
